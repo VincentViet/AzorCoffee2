@@ -68,8 +68,8 @@ public class LoginView implements FxmlView<LoginViewModel> {
 
 
     public void initialize() {
-        viewModel.usernameProperty().bind(username.textProperty());
-        viewModel.passwordProperty().bind(passwordField.textProperty());
+        username.textProperty().bindBidirectional(viewModel.usernameProperty());
+        passwordField.textProperty().bindBidirectional(viewModel.passwordProperty());
         statusBar.textProperty().bind(viewModel.statusProperty());
 
         statusBar.setStyle("-fx-text-fill: #DC3545;");

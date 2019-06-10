@@ -1,6 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" stylesheets="@.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.azor.main.MainView" />
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.azor.main.MainView">
+   <center>
+      <VBox prefHeight="213.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXTabPane prefHeight="810.0" prefWidth="1280.0">
+               <tabs>
+                  <Tab fx:id="homeTab">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                     <graphic>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/home.png" />
+                           </image></ImageView>
+                     </graphic>
+                  </Tab>
+                  <Tab fx:id="userTab">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                     <graphic>
+                        <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/user.png" />
+                           </image></ImageView>
+                     </graphic>
+                  </Tab>
+                  <Tab fx:id="tasksTab">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                     <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/tasks.png" />
+                           </image></ImageView>
+                     </graphic>
+                  </Tab>
+                  <Tab fx:id="chartTab">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                     <graphic>
+                        <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/chart.png" />
+                           </image></ImageView>
+                     </graphic>
+                  </Tab>
+               </tabs>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </JFXTabPane>
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <HBox alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <FontAwesomeIconView glyphName="MINUS" onMouseClicked="#onMinimize" size="1.5em" style="-fx-cursor: hand;">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView glyphName="CLOSE" onMouseClicked="#onClose" size="1.5em" style="-fx-cursor: hand;">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </FontAwesomeIconView>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>

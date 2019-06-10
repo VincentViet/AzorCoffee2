@@ -30,17 +30,18 @@ public class LoginViewModel implements ViewModel {
     private Configurator configurator;
 
     public LoginViewModel(){
+
+        configurator = Configurator.getInstance();
+        remember = Boolean.parseBoolean(configurator.getProperty("remember"));
+        username.setValue(configurator.getProperty("lastCode"));
+        password.setValue(configurator.getProperty("lastPass"));
+
         loginCommand = new DelegateCommand(() -> new Action() {
             @Override
             protected void action() throws Exception {
                 login();
             }
         });
-
-        configurator = Configurator.getInstance();
-        remember = Boolean.parseBoolean(configurator.getProperty("remember"));
-        username.setValue(configurator.getProperty("lastCode"));
-        password.setValue(configurator.getProperty("lastPass"));
     }
 
 
