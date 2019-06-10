@@ -4,6 +4,7 @@ import com.azor.home.HomeView;
 import com.azor.login.LoginView;
 import com.azor.main.MainView;
 import com.azor.model.Account;
+import com.azor.user.UserView;
 import de.saxsys.mvvmfx.FluentViewLoader;
 import de.saxsys.mvvmfx.ViewTuple;
 import javafx.application.Application;
@@ -18,9 +19,10 @@ import java.util.ArrayList;
 public class AzorCoffee extends Application {
 
     public static final class layout{
-        public static final int HOME = 0;
-        public static final int MAIN = 1;
-        static final int LOGIN = 2;
+        public static final int USER = 0;
+        public static final int HOME = 1;
+        public static final int MAIN = 2;
+        static final int LOGIN = 3;
     }
 
     private static Stage primaryStage;
@@ -29,6 +31,7 @@ public class AzorCoffee extends Application {
     private static ArrayList<ViewTuple> viewTuples = new ArrayList<>();
 
     public static void main(String[] args) {
+        viewTuples.add(FluentViewLoader.fxmlView(UserView.class).load());
         viewTuples.add(FluentViewLoader.fxmlView(HomeView.class).load());
         viewTuples.add(FluentViewLoader.fxmlView(MainView.class).load());
         viewTuples.add(FluentViewLoader.fxmlView(LoginView.class).load());
