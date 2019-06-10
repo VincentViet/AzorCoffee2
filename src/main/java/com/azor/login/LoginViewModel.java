@@ -4,6 +4,7 @@ import com.azor.AzorCoffee;
 import com.azor.model.Account;
 import com.azor.utils.Configurator;
 import com.azor.utils.Database;
+import de.saxsys.mvvmfx.MvvmFX;
 import de.saxsys.mvvmfx.ViewModel;
 import de.saxsys.mvvmfx.utils.commands.Action;
 import de.saxsys.mvvmfx.utils.commands.Command;
@@ -40,6 +41,7 @@ public class LoginViewModel implements ViewModel {
             @Override
             protected void action() throws Exception {
                 login();
+                MvvmFX.getNotificationCenter().publish(AzorCoffee.message.LOGIN);
             }
         });
     }

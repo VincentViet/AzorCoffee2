@@ -24,10 +24,15 @@ public class MainView implements FxmlView<MainViewModel> {
     @FXML
     private VBox chartTab;
     //endregion
+
+    private double xOffset = 0;
+    private double yOffset = 0;
+
     public void initialize() {
         homeTab.getChildren().add(AzorCoffee.getView(AzorCoffee.layout.HOME));
         userTab.getChildren().add(AzorCoffee.getView(AzorCoffee.layout.USER));
         tasksTab.getChildren().add(AzorCoffee.getView(AzorCoffee.layout.MANAGER));
+        chartTab.getChildren().add(AzorCoffee.getView(AzorCoffee.layout.CHART));
     }
 
     @FXML
@@ -38,5 +43,18 @@ public class MainView implements FxmlView<MainViewModel> {
     @FXML
     private void onMinimize(MouseEvent event){
         AzorCoffee.minimize();
+    }
+
+    @FXML
+    private void onMouseDragged(MouseEvent event){
+        AzorCoffee.setStagePosition(
+                event.getScreenX() - xOffset,
+                event.getScreenY() - yOffset);
+    }
+
+    @FXML
+    private void onMousePressed(MouseEvent event){
+        xOffset = event.getSceneX();
+        yOffset = event.getSceneY();
     }
 }

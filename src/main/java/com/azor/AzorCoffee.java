@@ -1,5 +1,6 @@
 package com.azor;
 
+import com.azor.chart.ChartView;
 import com.azor.home.HomeView;
 import com.azor.login.LoginView;
 import com.azor.main.MainView;
@@ -26,11 +27,17 @@ public class AzorCoffee extends Application {
         public static final int FOOD = 0;
         public static final int ADD = 1;
         public static final int PASSWORD = 2;
-        public static final int MANAGER = 3;
-        public static final int USER = 4;
-        public static final int HOME = 5;
-        public static final int MAIN = 6;
-        static final int LOGIN = 7;
+        public static final int CHART = 3;
+        public static final int MANAGER = 4;
+        public static final int USER = 5;
+        public static final int HOME = 6;
+        public static final int MAIN = 7;
+        static final int LOGIN = 8;
+    }
+
+    public static final class message{
+        public static final String LOGIN = "LOGIN";
+        public static final String UPDATE = "UPDATE";
     }
 
     private static Stage primaryStage;
@@ -42,6 +49,7 @@ public class AzorCoffee extends Application {
         viewTuples.add(FluentViewLoader.fxmlView(FoodView.class).load());
         viewTuples.add(FluentViewLoader.fxmlView(AddView.class).load());
         viewTuples.add(FluentViewLoader.fxmlView(PasswordView.class).load());
+        viewTuples.add(FluentViewLoader.fxmlView(ChartView.class).load());
         viewTuples.add(FluentViewLoader.fxmlView(ManagerView.class).load());
         viewTuples.add(FluentViewLoader.fxmlView(UserView.class).load());
         viewTuples.add(FluentViewLoader.fxmlView(HomeView.class).load());

@@ -31,6 +31,11 @@ public class Drink extends RecursiveTreeObject<Drink> {
         this.categoryID = new SimpleStringProperty(Integer.toString(categoryID));
     }
 
+    @Override
+    public String toString() {
+        return name.get();
+    }
+
     public String getCategoryName() {
         return categoryName.get();
     }

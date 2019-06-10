@@ -4,36 +4,41 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Table {
+    private int id;
     private String name;
-    private boolean status;
 
     public Table(ResultSet set){
         try {
-            name = "Table " + set.getInt("id");
-            status = set.getBoolean("isBlank");
+            id = set.getInt(1);
+            name = set.getString(2);
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public Table(int id, String name){
+        this.id = id;
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
         return name;
     }
 
-    public boolean getStatus() {
-        return status;
-    }
-
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
-
     @Override
     public String toString() {
-        return String.format("%s : %s", name, status ? "blank" : "booked");
+        return String.format("%s", name);
     }
 }

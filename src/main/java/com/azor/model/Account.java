@@ -1,6 +1,8 @@
 package com.azor.model;
 
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -15,7 +17,7 @@ public class Account extends RecursiveTreeObject<Account> {
     private StringProperty fullname;
     private StringProperty address;
     private StringProperty telphone;
-    private int type;
+    private IntegerProperty type;
 
     public Account(ResultSet set){
         try {
@@ -26,7 +28,7 @@ public class Account extends RecursiveTreeObject<Account> {
             fullname = new SimpleStringProperty(set.getString("fullname"));
             address = new SimpleStringProperty(set.getString("address"));
             telphone = new SimpleStringProperty(set.getString("telphone"));
-            type = set.getInt("type");
+            type = new SimpleIntegerProperty(set.getInt("type"));
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -39,7 +41,7 @@ public class Account extends RecursiveTreeObject<Account> {
         this.fullname = new SimpleStringProperty(fullname);
         this.address = new SimpleStringProperty(address);
         this.telphone = new SimpleStringProperty(telphone);
-        this.type = 1;
+        this.type = new SimpleIntegerProperty(1);
     }
 
     public int getId() {
@@ -93,6 +95,6 @@ public class Account extends RecursiveTreeObject<Account> {
     }
 
     public int getType() {
-        return type;
+        return type.get();
     }
 }

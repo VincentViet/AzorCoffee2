@@ -38,7 +38,7 @@
                </padding>
                <children>
                   <FontAwesomeIconView glyphName="USER" size="2em" />
-                  <Label fx:id="fullname" alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="541.0" style="-fx-font-weight: bold;">
+                  <Label fx:id="fullname" prefHeight="55.0" prefWidth="541.0" style="-fx-font-weight: bold;">
                      <HBox.margin>
                         <Insets left="20.0" right="20.0" />
                      </HBox.margin>
@@ -51,7 +51,7 @@
                </padding>
                <children>
                   <FontAwesomeIconView glyphName="ENVELOPE" size="2em" />
-                  <Label fx:id="email" alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="541.0" style="-fx-font-weight: bold;">
+                  <Label fx:id="email" prefHeight="55.0" prefWidth="541.0" style="-fx-font-weight: bold;">
                      <HBox.margin>
                         <Insets left="20.0" right="20.0" />
                      </HBox.margin>
@@ -67,7 +67,7 @@
                </padding>
                <children>
                   <FontAwesomeIconView glyphName="INFO" size="2em" />
-                  <Label fx:id="address" alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="541.0" style="-fx-font-weight: bold;">
+                  <Label fx:id="address" prefHeight="55.0" prefWidth="541.0" style="-fx-font-weight: bold;">
                      <HBox.margin>
                         <Insets left="35.0" right="20.0" />
                      </HBox.margin>
@@ -83,7 +83,7 @@
                </padding>
                <children>
                   <FontAwesomeIconView glyphName="PHONE" size="2em" />
-                  <Label fx:id="phone" alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="541.0" style="-fx-font-weight: bold;">
+                  <Label fx:id="phone" prefHeight="55.0" prefWidth="541.0" style="-fx-font-weight: bold;">
                      <HBox.margin>
                         <Insets left="20.0" right="20.0" />
                      </HBox.margin>
@@ -99,10 +99,13 @@
                </padding>
                <children>
                   <FontAwesomeIconView glyphName="BOLT" size="2em" />
-                  <Label fx:id="type" alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="541.0" style="-fx-font-weight: bold;">
+                  <Label fx:id="type" prefHeight="55.0" prefWidth="541.0" style="-fx-font-weight: bold;">
                      <HBox.margin>
                         <Insets left="20.0" right="20.0" />
                      </HBox.margin>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
                   </Label>
                </children>
                <VBox.margin>
@@ -110,6 +113,9 @@
                </VBox.margin>
             </HBox>
          </children>
+         <HBox.margin>
+            <Insets bottom="100.0" />
+         </HBox.margin>
       </VBox>
       <Pane prefHeight="600.0" prefWidth="71.0">
          <children>

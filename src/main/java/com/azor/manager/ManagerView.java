@@ -109,32 +109,32 @@ public class ManagerView implements FxmlView<ManagerViewModel> {
     private void initAccountTable() {
         // Initialize tree table view collumns
         JFXTreeTableColumn<Account, String> username = new JFXTreeTableColumn<>("Username");
-        username.setPrefWidth(125);
+        username.setPrefWidth(200);
         username.setCellValueFactory(param -> param.getValue().getValue().usernameProperty());
         username.setStyle("-fx-alignment: center");
 
-        JFXTreeTableColumn<Account, String> password = new JFXTreeTableColumn<>("Password");
-        password.setPrefWidth(125);
-        password.setCellValueFactory(param -> param.getValue().getValue().passwordProperty());
-        password.setStyle("-fx-alignment: center");
+//        JFXTreeTableColumn<Account, String> password = new JFXTreeTableColumn<>("Password");
+//        password.setPrefWidth(125);
+//        password.setCellValueFactory(param -> param.getValue().getValue().passwordProperty());
+//        password.setStyle("-fx-alignment: center");
 
         JFXTreeTableColumn<Account, String> email = new JFXTreeTableColumn<>("Email");
-        email.setPrefWidth(225);
+        email.setPrefWidth(200);
         email.setCellValueFactory(param -> param.getValue().getValue().emailProperty());
         email.setStyle("-fx-alignment: center");
 
         JFXTreeTableColumn<Account, String> fullname = new JFXTreeTableColumn<>("Full name");
-        fullname.setPrefWidth(150);
+        fullname.setPrefWidth(200);
         fullname.setCellValueFactory(param -> param.getValue().getValue().fullnameProperty());
         fullname.setStyle("-fx-alignment: center");
 
         JFXTreeTableColumn<Account, String> address = new JFXTreeTableColumn<>("Address");
-        address.setPrefWidth(205);
+        address.setPrefWidth(200);
         address.setCellValueFactory(param -> param.getValue().getValue().addressProperty());
         address.setStyle("-fx-alignment: center");
 
         JFXTreeTableColumn<Account, String> telphone = new JFXTreeTableColumn<>("Telephone Number");
-        telphone.setPrefWidth(175);
+        telphone.setPrefWidth(200);
         telphone.setCellValueFactory(param -> param.getValue().getValue().telphoneProperty());
         telphone.setStyle("-fx-alignment: center");
 
@@ -143,7 +143,7 @@ public class ManagerView implements FxmlView<ManagerViewModel> {
 
         // Create tree
         final TreeItem<Account> root = new RecursiveTreeItem<Account>(viewModel.getListAccount(), RecursiveTreeObject::getChildren);
-        treeviewAccount.getColumns().setAll(username, password, email, fullname, address, telphone);
+        treeviewAccount.getColumns().setAll(username, /*password,*/ email, fullname, address, telphone);
         treeviewAccount.setRoot(root);
         treeviewAccount.setShowRoot(false);
     }
@@ -181,11 +181,11 @@ public class ManagerView implements FxmlView<ManagerViewModel> {
     private void initBillTable() {
         JFXTreeTableColumn<Bill, String> billID = new JFXTreeTableColumn<>("ID");
         billID.setPrefWidth(125);
-        billID.setCellValueFactory(param -> param.getValue().getValue().IDProperty());
+        billID.setCellValueFactory(param -> param.getValue().getValue().stringIDProperty());
         billID.setStyle("-fx-alignment: center");
 
         JFXTreeTableColumn<Bill, String> billDate = new JFXTreeTableColumn<>("Date");
-        billDate.setPrefWidth(275);
+        billDate.setPrefWidth(350);
         billDate.setCellValueFactory(param -> param.getValue().getValue().dateProperty());
         billDate.setStyle("-fx-alignment: center");
 

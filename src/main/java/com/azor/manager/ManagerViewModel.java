@@ -1,10 +1,12 @@
 package com.azor.manager;
 
+import com.azor.AzorCoffee;
 import com.azor.model.Account;
 import com.azor.model.Bill;
 import com.azor.model.BillInfo;
 import com.azor.model.Drink;
 import com.azor.utils.Database;
+import de.saxsys.mvvmfx.MvvmFX;
 import de.saxsys.mvvmfx.ViewModel;
 import de.saxsys.mvvmfx.utils.commands.Action;
 import de.saxsys.mvvmfx.utils.commands.Command;
@@ -36,8 +38,6 @@ public class ManagerViewModel implements ViewModel {
         loadDrink();
         loadBill();
 
-//        subscribe(ManagerView.LOAD_BILL_INFO, (key, payload) -> loadBillInfo((Bill)payload[0]));
-
         deleteAccountCommand = new DelegateCommand(() -> new Action() {
             @Override
             protected void action() throws Exception {
@@ -57,16 +57,20 @@ public class ManagerViewModel implements ViewModel {
                 PreparedStatement temp = Database.getInstance().getConnection().prepareStatement(query);
                 temp.setString(1, drink.getName());
                 temp.executeUpdate();
-                
+
                 listDrink.remove(drink);
             }
         });
-        
+
         loadBillInfoCommand = new DelegateCommand(() -> new Action() {
             @Override
             protected void action(){
                 loadBillInfo(bill);
             }
+        });
+
+        MvvmFX.getNotificationCenter().subscribe(AzorCoffee.message.UPDATE, (key, payload) ->{
+            loadBill();
         });
     }
 
@@ -150,7 +154,7 @@ public class ManagerViewModel implements ViewModel {
     }
 
     private void loadBill() {
-        String query = "Select id, creationTime from bill";
+        String query = "Select id, paymentTime from bill where isPaid = true";
         try {
             PreparedStatement statement = Database.getInstance().getConnection().prepareStatement(query);
             ResultSet result = statement.executeQuery();
@@ -168,7 +172,7 @@ public class ManagerViewModel implements ViewModel {
         String query = "Select name, price, count from BillInfo where billID = ?";
         try {
             PreparedStatement statement = Database.getInstance().getConnection().prepareStatement(query);
-            statement.setString(1, selectedBill.getID());
+            statement.setInt(1, selectedBill.getID());
             ResultSet result = statement.executeQuery();
             listBillInfo.clear();
             while (result.next()) {

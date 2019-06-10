@@ -96,149 +96,159 @@
     </key>
     <column id="29" parent="7" name="id">
       <Position>1</Position>
-      <DataType>INTEGER|0s</DataType>
+      <DataType>integer|0s</DataType>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="30" parent="7" name="creationTime">
+    <column id="30" parent="7" name="paymentTime">
       <Position>2</Position>
       <DataType>TIMESTAMP|0s</DataType>
-      <NotNull>1</NotNull>
+      <DefaultExpression>time (&apos;now&apos;)</DefaultExpression>
     </column>
-    <column id="31" parent="7" name="paymentTime">
+    <column id="31" parent="7" name="isPaid">
       <Position>3</Position>
-      <DataType>TIMESTAMP|0s</DataType>
+      <DataType>BOOLEAN|0s</DataType>
+      <DefaultExpression>false</DefaultExpression>
+    </column>
+    <column id="32" parent="7" name="table_id">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="32" parent="7">
+    <key id="33" parent="7">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="33" parent="8" name="id">
+    <foreign-key id="34" parent="7">
+      <ColNames>table_id</ColNames>
+      <RefTableName>CoffeeTable</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="35" parent="8" name="id">
       <Position>1</Position>
-      <DataType>INTEGER|0s</DataType>
+      <DataType>integer|0s</DataType>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="34" parent="8" name="name">
+    <column id="36" parent="8" name="name">
       <Position>2</Position>
       <DataType>NVARCHAR(30)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="35" parent="8" name="price">
+    <column id="37" parent="8" name="price">
       <Position>3</Position>
-      <DataType>REAL|0s</DataType>
+      <DataType>DECIMAL(9)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="36" parent="8" name="count">
+    <column id="38" parent="8" name="count">
       <Position>4</Position>
       <DataType>INT|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>1</DefaultExpression>
     </column>
-    <column id="37" parent="8" name="billID">
+    <column id="39" parent="8" name="billID">
       <Position>5</Position>
       <DataType>INT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="38" parent="8">
+    <key id="40" parent="8">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="39" parent="8">
+    <foreign-key id="41" parent="8">
       <ColNames>name</ColNames>
       <RefTableName>FoodAndDrink</RefTableName>
       <RefColNames>name</RefColNames>
     </foreign-key>
-    <foreign-key id="40" parent="8">
+    <foreign-key id="42" parent="8">
       <ColNames>price</ColNames>
       <RefTableName>FoodAndDrink</RefTableName>
       <RefColNames>price</RefColNames>
     </foreign-key>
-    <foreign-key id="41" parent="8">
+    <foreign-key id="43" parent="8">
       <ColNames>billID</ColNames>
       <RefTableName>Bill</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="42" parent="9" name="id">
+    <column id="44" parent="9" name="id">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="43" parent="9" name="name">
+    <column id="45" parent="9" name="name">
       <Position>2</Position>
       <DataType>NVARCHAR(30)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="44" parent="9">
+    <key id="46" parent="9">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="45" parent="10" name="id">
+    <column id="47" parent="10" name="id">
       <Position>1</Position>
-      <DataType>INTEGER|0s</DataType>
+      <DataType>integer|0s</DataType>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="46" parent="10" name="isBlank">
+    <column id="48" parent="10" name="name">
       <Position>2</Position>
-      <DataType>BOOLEAN|0s</DataType>
-      <DefaultExpression>FALSE</DefaultExpression>
+      <DataType>nvarchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
     </column>
-    <key id="47" parent="10">
+    <key id="49" parent="10">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="48" parent="11" name="id">
+    <column id="50" parent="11" name="id">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="49" parent="11" name="name">
+    <column id="51" parent="11" name="name">
       <Position>2</Position>
       <DataType>NVARCHAR(30)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="50" parent="11" name="price">
+    <column id="52" parent="11" name="price">
       <Position>3</Position>
       <DataType>REAL|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="51" parent="11" name="categoryID">
+    <column id="53" parent="11" name="categoryID">
       <Position>4</Position>
       <DataType>INT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="52" parent="11">
+    <key id="54" parent="11">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="53" parent="11">
+    <foreign-key id="55" parent="11">
       <ColNames>categoryID</ColNames>
       <RefTableName>Categories</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="54" parent="12" name="type">
+    <column id="56" parent="12" name="type">
       <Position>1</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="55" parent="12" name="name">
+    <column id="57" parent="12" name="name">
       <Position>2</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="56" parent="12" name="tbl_name">
+    <column id="58" parent="12" name="tbl_name">
       <Position>3</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="57" parent="12" name="rootpage">
+    <column id="59" parent="12" name="rootpage">
       <Position>4</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="58" parent="12" name="sql">
+    <column id="60" parent="12" name="sql">
       <Position>5</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="59" parent="13" name="name">
+    <column id="61" parent="13" name="name">
       <Position>1</Position>
     </column>
-    <column id="60" parent="13" name="seq">
+    <column id="62" parent="13" name="seq">
       <Position>2</Position>
     </column>
   </database-model>

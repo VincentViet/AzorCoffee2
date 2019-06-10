@@ -9,6 +9,7 @@ import de.saxsys.mvvmfx.FxmlView;
 import de.saxsys.mvvmfx.InjectViewModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 
 @FxmlPath("/fxml/user.fxml")
@@ -26,6 +27,21 @@ public class UserView implements FxmlView<UserViewModel> {
     @FXML
     private JFXButton editButton;
 
+    @FXML
+    private Label fullname;
+
+    @FXML
+    private Label email;
+
+    @FXML
+    private Label address;
+
+    @FXML
+    private Label phone;
+
+    @FXML
+    private Label type;
+
     public void initialize() {
         drawer.setSidePane(AzorCoffee.getView(AzorCoffee.layout.PASSWORD));
         drawer.open();
@@ -41,6 +57,12 @@ public class UserView implements FxmlView<UserViewModel> {
             editButton.getStyleClass().removeAll("edit-button");
             editButton.getStyleClass().add("close-button");
         });
+
+        fullname.textProperty().bind(viewModel.fullnameProperty());
+        email.textProperty().bind(viewModel.emailProperty());
+        address.textProperty().bind(viewModel.addressProperty());
+        phone.textProperty().bind(viewModel.phoneProperty());
+        type.textProperty().bind(viewModel.typeProperty());
     }
 
     @FXML

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<HBox prefHeight="650.0" prefWidth="1180.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.azor.chart.ChartView">
+   <children>
+      <LineChart fx:id="lineChart" prefHeight="650.0" prefWidth="701.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <VBox alignment="TOP_CENTER" prefHeight="650.0" prefWidth="484.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="171.0" prefWidth="482.0" style="-fx-background-color: #6C757D;" text="STATISTICS" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="59.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <JFXDatePicker fx:id="datePicker" />
+                  <JFXButton contentDisplay="GRAPHIC_ONLY" onAction="#onClearChart" style="-fx-background-color: orange;">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="ERASER" size="2em" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</HBox>

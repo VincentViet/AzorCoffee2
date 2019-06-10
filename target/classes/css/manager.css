@@ -48,20 +48,8 @@
     -fx-background-color: #9c74ff;
 }
 
-/*.tab2 {*/
-/*    -fx-background-radius: 0;*/
-/*    -fx-background-color: derive(-fx-base, 0%);*/
-/*    -fx-background-insets: 0.3;*/
-/*    -fx-focus-color: #6747cd;*/
+/*.tab{*/
+/*    -fx-background-color: #9c74ff;*/
 /*}*/
-
-/*.tab2:hover {*/
-/*    -fx-background-color: derive(-fx-base, 20%);*/
-/*}*/
-
-/*.tab2:selected {*/
-/*    -fx-background-color: derive(-fx-base, 60%);*/
-/*}*/
-
 
 
