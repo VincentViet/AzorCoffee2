@@ -40,14 +40,14 @@
                         <Font name="Ubuntu Mono Bold" size="20.0" />
                     </font>
                 </Label>
-                <JFXTextField fx:id="identifier" focusColor="#6747cd" labelFloat="true" layoutX="44.0" layoutY="220.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" promptText="Email/Username/Phone Number" unFocusColor="#6747cd" />
+                <JFXTextField fx:id="username" focusColor="#6747cd" labelFloat="true" layoutX="44.0" layoutY="220.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" promptText="Email/Username/Phone Number" unFocusColor="#6747cd" />
                 <JFXPasswordField fx:id="passwordField" focusColor="#6747cd" labelFloat="true" layoutX="44.0" layoutY="300.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" promptText="Password" unFocusColor="#6747cd" />
-                <JFXCheckBox fx:id="checkBox" checkedColor="#6747cd" layoutX="44.0" layoutY="357.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Remember for later login ?" textAlignment="CENTER" textFill="#a3a3a3" unCheckedColor="#6747cd">
+                <JFXCheckBox fx:id="checkBox" checkedColor="#6747cd" layoutX="44.0" layoutY="369.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Remember for later login ?" textAlignment="CENTER" textFill="#a3a3a3" unCheckedColor="#6747cd">
                     <font>
                         <Font name="Ubuntu Mono Bold Italic" size="13.0" />
                     </font>
                 </JFXCheckBox>
-                <JFXButton layoutX="44.0" layoutY="402.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onLogin" prefHeight="50.0" prefWidth="300.0" ripplerFill="#4520bc" styleClass="login-btn" text="LOGIN" textFill="WHITE">
+                <JFXButton layoutX="43.0" layoutY="414.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onLogin" prefHeight="50.0" prefWidth="300.0" ripplerFill="#4520bc" styleClass="login-btn" text="LOGIN" textFill="WHITE">
                     <font>
                         <Font name="Ubuntu Mono Bold" size="20.0" />
                     </font>

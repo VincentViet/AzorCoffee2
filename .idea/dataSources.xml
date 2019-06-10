@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="AzorCoffee" uuid="ec2bbbdb-6fa4-445d-95a1-1a2e44add329">
-      <driver-ref>mysql.8</driver-ref>
+    <data-source source="LOCAL" name="AzorCoffee" uuid="8c4ac7d3-0b0d-4d7a-a35c-a714b30238d3">
+      <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://remotemysql.com:3306/B1d0LAqgiE</jdbc-url>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/target/classes/app.sqlite3</jdbc-url>
       <driver-properties>
-        <property name="autoReconnect" value="true" />
-        <property name="zeroDateTimeBehavior" value="CONVERT_TO_NULL" />
-        <property name="tinyInt1isBit" value="false" />
-        <property name="characterEncoding" value="utf8" />
-        <property name="characterSetResults" value="utf8" />
-        <property name="yearIsDateType" value="false" />
+        <property name="enable_load_extension" value="true" />
       </driver-properties>
     </data-source>
   </component>

@@ -4,6 +4,7 @@ import com.azor.AzorCoffee;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.validation.RequiredFieldValidator;
 import de.saxsys.mvvmfx.FxmlPath;
 import de.saxsys.mvvmfx.FxmlView;
 import de.saxsys.mvvmfx.InjectViewModel;
@@ -21,7 +22,7 @@ public class LoginView implements FxmlView<LoginViewModel> {
     private LoginViewModel viewModel;
 
     @FXML
-    private JFXTextField identifier;
+    private JFXTextField username;
 
     @FXML
     private JFXPasswordField passwordField;
@@ -37,7 +38,11 @@ public class LoginView implements FxmlView<LoginViewModel> {
 
     @FXML
     void onLogin(ActionEvent event) {
-
+        if (username.validate() && passwordField.validate())
+        {
+            viewModel.setRemember(checkBox.isSelected());
+            viewModel.getLoginCommand().execute();
+        }
     }
 
     @FXML
@@ -63,6 +68,16 @@ public class LoginView implements FxmlView<LoginViewModel> {
 
 
     public void initialize() {
+        viewModel.usernameProperty().bind(username.textProperty());
+        viewModel.passwordProperty().bind(passwordField.textProperty());
+        statusBar.textProperty().bind(viewModel.statusProperty());
 
+        statusBar.setStyle("-fx-text-fill: #DC3545;");
+
+        RequiredFieldValidator validator =new RequiredFieldValidator("This field is required.");
+        username.getValidators().add(validator);
+        passwordField.getValidators().add(validator);
+
+        checkBox.setSelected(viewModel.isRemember());
     }
 }
