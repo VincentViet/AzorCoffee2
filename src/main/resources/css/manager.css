@@ -1,0 +1,67 @@
+
+.add-btn {
+    -fx-background-color: #0275d8;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+}
+
+.delete-btn {
+    -fx-background-color: #d50000;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+}
+
+.secondary-btn {
+    -fx-text-fill: #6747cd;
+}
+
+/*Style of entire tableView*/
+.table-view {
+    -fx-background-color: #ffffff;
+}
+
+
+/*Style of each column header in the tableView*/
+.table-view .column-header {
+    -fx-background-color: #6747cd;
+    -fx-font-size: 16px;
+}
+
+/*Style of each column header's label  in the tableView*/
+.table-view .column-header-background .label {
+    -fx-background-color: transparent;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+/*Style of each column in the tableView*/
+.table-view .table-column {
+    -fx-alignment: center;
+    -fx-font-size: 16px;
+}
+
+.tree-table-row-cell:hover{
+    -fx-background-color: derive(-fx-base, 20%);
+    -fx-cursor: hand;
+}
+.tree-table-row-cell:selected {
+    -fx-background-color: #9c74ff;
+}
+
+/*.tab2 {*/
+/*    -fx-background-radius: 0;*/
+/*    -fx-background-color: derive(-fx-base, 0%);*/
+/*    -fx-background-insets: 0.3;*/
+/*    -fx-focus-color: #6747cd;*/
+/*}*/
+
+/*.tab2:hover {*/
+/*    -fx-background-color: derive(-fx-base, 20%);*/
+/*}*/
+
+/*.tab2:selected {*/
+/*    -fx-background-color: derive(-fx-base, 60%);*/
+/*}*/
+
+
+

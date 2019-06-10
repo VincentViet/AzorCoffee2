@@ -1,3 +1,8 @@
-.panel{
-    -fx-border-width: 0px 0px 0px 0px;
+.edit-button{
+    -fx-background-color:  #007BFF;
 }
+
+.close-button{
+    -fx-background-color: #DC3545;
+}
+

@@ -1,4 +1,4 @@
-package com.azor.password;
+package com.azor.user.password;
 
 import de.saxsys.mvvmfx.ViewModel;
 

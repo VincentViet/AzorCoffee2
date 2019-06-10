@@ -5,7 +5,6 @@ import de.saxsys.mvvmfx.FxmlPath;
 import de.saxsys.mvvmfx.FxmlView;
 import de.saxsys.mvvmfx.InjectViewModel;
 import javafx.fxml.FXML;
-import javafx.scene.control.Tab;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 
@@ -28,6 +27,7 @@ public class MainView implements FxmlView<MainViewModel> {
     public void initialize() {
         homeTab.getChildren().add(AzorCoffee.getView(AzorCoffee.layout.HOME));
         userTab.getChildren().add(AzorCoffee.getView(AzorCoffee.layout.USER));
+        tasksTab.getChildren().add(AzorCoffee.getView(AzorCoffee.layout.MANAGER));
     }
 
     @FXML
